@@ -6,12 +6,12 @@
         <div class='row'>
             <div class='col-md-2'>Refine by:</div>
             <div class='col-md-4'>
-                <input type='text' />
+                <input type='text' [(ngModel)]="userText" />
             </div>
         </div>
         <div class='row'>
             <div class='col-md-6'>
-                <h3>Refined by: </h3>
+                <h3>Refined by:{{ userText }} </h3>
             </div>
         </div>
         <div class='table-responsive'>
@@ -19,7 +19,7 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class='btn btn-primary'>
+                            <button class='btn btn-primary' (click)="displayMobiles()">
                                 Display Images - might consume data
                             </button>
                         </th>
@@ -32,7 +32,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor='let mobile of mobiles'>
-                        <td></td>
+                        <td [hidden]="showImages"><img [src]='imageUrl+mobile.image' style="height: 75px;width:75"/></td>
                         <td>{{ mobile.name }}</td>
                         <td>{{ mobile.model }}</td>
                         <td>{{ mobile.releaseDate }}</td>

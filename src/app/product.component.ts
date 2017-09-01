@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
     pageTitle = 'Mobiles you should not miss';
+    imageUrl = 'assets/images/';
+    showImages = true;
+    userText = '';
     mobiles: any[] = [
         {
         'msId': 1,
@@ -15,7 +18,7 @@ export class ProductComponent {
         'description': 'Motorola Rocks.',
         'price': 10000,
         'rating': 3.2,
-        'image': 'motorola-moto-m-.jpeg'
+        'image': 'moto.jpg'
     },
     {
         'msId': 2,
@@ -25,7 +28,12 @@ export class ProductComponent {
         'description': 'Lenova Super',
         'price': 20000,
         'rating': 4.2,
-        'image': 'lenovo-k6-power.jpeg'
+        'image': 'lenovo1.jpg'
     }
     ];
+
+    displayMobiles(): void {
+        console.log('Control the visibility of Images here');
+        this.showImages = !this.showImages;
+    }
 }
